@@ -14,5 +14,5 @@ steps:
     pip install -r requirements.txt
   displayName: 'Install dependencies'
 
-- script: python -m unittest Test focoenobra/QA_firmaDigital.py
+- script: python -m unittest QA_firmaDigital.py
   displayName: 'Run tests'

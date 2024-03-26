@@ -13,5 +13,5 @@ steps:
 - script: |
     python -m pip install --upgrade pip
     pip install -r requirements.txt
-    python QA_firmaDigital.py
+    python Test focoenobra/QA_firmaDigital.py
   displayName: 'Run Selenium Tests'

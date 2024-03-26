@@ -11,17 +11,7 @@ steps:
     addToPath: true
 
 - script: |
-    python -m pip install -r requirements.txt
-  displayName: 'Install dependencies'
-
-- checkout: self
-
-- script: |
-    python Test\focoenobra/QA_firmaDigital.py
-  displayName: 'Run Selenium tests'
-
-- task: PublishTestResults@2
-  inputs:
-    testResultsFiles: '**/TEST-*.xml'
-    testRunTitle: 'Selenium Tests'
-  condition: succeededOrFailed()
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt
+    python QA_firmaDigital.py
+  displayName: 'Run Selenium Tests'

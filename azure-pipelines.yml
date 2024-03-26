@@ -11,5 +11,5 @@ steps:
 - script: pip install selenium html-testRunner
   displayName: 'Install dependencies'
 
-- script: python -m unittest QA_firmaDigital.py
+- script: python -m unittest test/focoenobra/QA_firmaDigital.py
   displayName: 'Run tests'

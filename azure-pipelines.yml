@@ -8,11 +8,20 @@ steps:
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '3.x'
+    addToPath: true
 
-- script: 
-    python -m pip install --upgrade pip
-    pip install -r requirements.txt
+- script: |
+    python -m pip install -r requirements.txt
   displayName: 'Install dependencies'
 
-- script: python -m unittest QA_firmaDigital.py
-  displayName: 'Run tests'
+- checkout: self
+
+- script: |
+    python Test\focoenobra/QA_firmaDigital.py
+  displayName: 'Run Selenium tests'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFiles: '**/TEST-*.xml'
+    testRunTitle: 'Selenium Tests'
+  condition: succeededOrFailed()

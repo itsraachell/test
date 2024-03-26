@@ -16,5 +16,5 @@ steps:
   displayName: 'Instalar dependencias'
 
 - script: |
-    python Test\focoenobra/QA_firmaDigital.py
+    python QA_firmaDigital.py
   displayName: 'Run test'
